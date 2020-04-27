@@ -3419,9 +3419,6 @@ html.trickle #wrapper {
   left: 0;
   right: 0;
 }
-.pagetransition__loading .js-loading {
-  display: block !important;
-}
 #wrapper {
   overflow-x: hidden !important;
 }

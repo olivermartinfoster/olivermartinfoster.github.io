@@ -119,7 +119,7 @@ define([
       const previousIndex = models.findIndex(model => model === previousModel);
       const currentIndex = models.findIndex(model => model === currentModel);
 
-      const isScrollForward = (currentIndex > previousIndex);
+      const isScrollForward = (currentIndex >= previousIndex);
       // Add appropriate animation
       if (isScrollForward) {
         contentObjectView.$el.addClass('pagetransition__contentobject__initial__forward');
