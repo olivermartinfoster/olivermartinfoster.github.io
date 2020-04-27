@@ -1,0 +1,26 @@
+{
+  "name": "adapt-contrib-matching",
+  "version": "4.0.0",
+  "framework": ">=5",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-matching",
+  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
+  "component": "matching",
+  "displayName": "Matching Question",
+  "description": "A question component that allows the learner to match the options to question stems",
+  "main": "/js/adapt-contrib-matching.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0",
+  "_release": "4.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.0",
+    "commit": "a737985cde57e42d8b1b27df28dd6664741b570a"
+  },
+  "_source": "git://github.com/adaptlearning/adapt-contrib-matching.git",
+  "_target": "4.0.0",
+  "_originalSource": "adapt-contrib-matching",
+  "_direct": true
+}

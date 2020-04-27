@@ -1,0 +1,34 @@
+{
+  "name": "adapt-contrib-vanilla",
+  "version": "5.1.1",
+  "framework": ">=5.2",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-vanilla",
+  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
+  "theme": "vanilla",
+  "displayName": "Vanilla",
+  "description": "A core bundled theme",
+  "main": "js/theme.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-theme"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "targetAttribute": "_vanilla",
+  "_release": "5.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v5.1.1",
+    "commit": "67a7d64899e98ed226836181ca9a27171e664f89"
+  },
+  "_source": "git://github.com/adaptlearning/adapt-contrib-vanilla.git",
+  "_target": "5.1.1",
+  "_originalSource": "adapt-contrib-vanilla",
+  "_direct": true
+}

@@ -1,0 +1,26 @@
+{
+  "name": "adapt-contrib-textInput",
+  "version": "4.0.0",
+  "framework": ">=5",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-textInput",
+  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
+  "component": "textinput",
+  "displayName": "Text Input",
+  "description": "A question component that allows the learner to input text based upon a question stem.",
+  "main": "/js/adapt-contrib-textInput.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0",
+  "_release": "4.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.0",
+    "commit": "3c8eea00c5f8d6532847983ab0138567bee8a587"
+  },
+  "_source": "git://github.com/adaptlearning/adapt-contrib-textInput.git",
+  "_target": "4.0.0",
+  "_originalSource": "adapt-contrib-textInput",
+  "_direct": true
+}

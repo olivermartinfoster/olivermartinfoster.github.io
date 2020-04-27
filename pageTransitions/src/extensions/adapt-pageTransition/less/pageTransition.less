@@ -1,0 +1,43 @@
+@pagetransition-duration: 0.33s;
+
+.pagetransition__loading .js-loading {
+  display: block !important
+}
+
+#wrapper {
+  overflow-x: hidden !important;
+}
+
+.pagetransition_contentobject__preremove {
+  transition: transform @pagetransition-duration;
+  transform: scale(1) rotateZ(0.01deg);
+}
+
+.pagetransition_contentobject__remove {
+  transform: scale(0.90) rotateZ(0.01deg);
+}
+
+.pagetransition__contentobject__initial {
+  position: fixed;
+  top: @navigation-height;
+  left: 0;
+  width: 100%;
+  transition: transform @pagetransition-duration;
+  background-color: white;
+  opacity: 1 !important;
+
+  &__forward {
+    transform: translateX(100%);
+    transform-origin: top left;
+  }
+
+  &__backward {
+    transform: translateX(-100%);
+    transform-origin: top right;
+  }
+
+}
+
+.pagetransition__contentobject__start {
+  transform: none;
+}

@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "properties": {
+        "course": {
+          "type": "object",
+          "properties": {
+            "_pageTransition": {
+              "type": "object",
+              "required": false,
+              "legend": "Trickle",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": false,
+                  "title": "Enable Page Transitions",
+                  "inputType": "Checkbox",
+                  "validators": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
