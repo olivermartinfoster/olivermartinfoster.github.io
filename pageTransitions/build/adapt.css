@@ -3423,11 +3423,13 @@ html.trickle #wrapper {
   overflow-x: hidden !important;
 }
 .pagetransition_contentobject__preremove {
-  transition: transform 0.33s ease-out;
+  transition: transform 0.33s ease-out, opacity 0.33s ease-out;
   transform: scale(1) rotateZ(0.01deg);
+  opacity: 1 !important;
 }
 .pagetransition_contentobject__remove {
-  transform: scale(0.9) rotateZ(0.01deg);
+  transform: scale(0.95) rotateZ(0.01deg);
+  opacity: 0 !important;
 }
 .pagetransition__contentobject__initial {
   position: fixed;
@@ -3436,7 +3438,6 @@ html.trickle #wrapper {
   width: 100%;
   transition: transform 0.33s ease-out;
   background-color: white;
-  opacity: 1 !important;
 }
 .pagetransition__contentobject__initial__forward {
   transform: translateX(100%);

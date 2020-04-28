@@ -6,12 +6,14 @@
 }
 
 .pagetransition_contentobject__preremove {
-  transition: transform @pagetransition-duration @pagetransition-easing;
+  transition: transform @pagetransition-duration @pagetransition-easing, opacity @pagetransition-duration @pagetransition-easing;
   transform: scale(1) rotateZ(0.01deg);
+  opacity: 1 !important;
 }
 
 .pagetransition_contentobject__remove {
-  transform: scale(0.90) rotateZ(0.01deg);
+  transform: scale(0.95) rotateZ(0.01deg);
+  opacity: 0 !important;
 }
 
 .pagetransition__contentobject__initial {
@@ -21,7 +23,6 @@
   width: 100%;
   transition: transform @pagetransition-duration @pagetransition-easing;
   background-color: white;
-  opacity: 1 !important;
 
   &__forward {
     transform: translateX(100%);

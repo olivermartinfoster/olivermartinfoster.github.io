@@ -104,7 +104,7 @@ define([
 
       // Stop normal contentObject animation behaviour
       contentObjectView.disableAnimation = true;
-      contentObjectView.$el.css('opacity', 1);
+      contentObjectView.$el.css('opacity', '');
 
       // Capture view
       this.views.push(contentObjectView);
