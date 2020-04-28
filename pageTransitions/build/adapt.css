@@ -3423,7 +3423,7 @@ html.trickle #wrapper {
   overflow-x: hidden !important;
 }
 .pagetransition_contentobject__preremove {
-  transition: transform 0.33s;
+  transition: transform 0.33s ease-out;
   transform: scale(1) rotateZ(0.01deg);
 }
 .pagetransition_contentobject__remove {
@@ -3434,7 +3434,7 @@ html.trickle #wrapper {
   top: 3.5rem;
   left: 0;
   width: 100%;
-  transition: transform 0.33s;
+  transition: transform 0.33s ease-out;
   background-color: white;
   opacity: 1 !important;
 }
