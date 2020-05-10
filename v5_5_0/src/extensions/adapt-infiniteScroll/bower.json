@@ -1,0 +1,17 @@
+{
+  "name": "adapt-infiniteScroll",
+  "version": "0.0.1",
+  "framework": ">=5",
+  "homepage": "https://github.com/olivermartinfoster/adapt-infiniteScroll",
+  "issues": "https://github.com/olivermartinfoster/adapt-infiniteScroll/issues/new",
+  "extension" : "infiniteScroll",
+  "displayName" : "Infinite Scroll",
+  "description": "An extension to render on scroll",
+  "main": "/js/adapt-infiniteScroll.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPL-3.0",
+  "targetAttribute": "_infiniteScroll"
+}
