@@ -13,21 +13,21 @@ define([
    *
    */
 
-  var Trickle = Backbone.Controller.extend({
+  class Trickle extends Backbone.Controller {
 
-    initialize: function() {
+    initialize() {
       this.listenTo(Adapt, {
         'app:dataLoaded': this.onAppDataReady
       });
-    },
+    }
 
-    onAppDataReady: function() {
+    onAppDataReady() {
       this.addTrickleComponents();
       this.setupEventListeners();
       this.setupLocking();
-    },
+    }
 
-    addTrickleComponents: function() {
+    addTrickleComponents() {
       const models = Adapt.course.getAllDescendantModels(true);
 
       const TrickleModel = Adapt.getModelClass('trickle-button');
@@ -79,9 +79,9 @@ define([
           model.getChildren().add(trickleModel);
         });
       });
-    },
+    }
 
-    setupTrickleDefaults: function(model) {
+    setupTrickleDefaults(model) {
       // Setup original trickle configuration with defaults
       const config = Adapt.trickle.getModelConfig(model);
       _.defaults(config, {
@@ -111,35 +111,35 @@ define([
       });
       Adapt.trickle.setModelConfig(model, config);
       return config;
-    },
+    }
 
-    setupEventListeners: function() {
+    setupEventListeners() {
       this.listenTo(Adapt, {
         'contentObjectView:preRender assessment:restored assessments:postReset': this.setupLocking,
         'view:addChild': this.onAddChild
       });
-    },
+    }
 
-    getCompletionAttribute: function() {
+    getCompletionAttribute() {
       var trickle = Adapt.config.get('_trickle');
       if (!trickle) return "_isComplete";
       return trickle._completionAttribute || "_isComplete";
-    },
+    }
 
-    getModelConfig: function(model) {
+    getModelConfig(model) {
       const configId = model.get('_trickleConfigId');
       if (configId) {
         const inheritedConfig = Adapt.findById(configId).get('_trickle');
         return $.extend(true, {}, inheritedConfig, model.get('_trickle'));
       }
       return model.get("_trickle");
-    },
+    }
 
-    setModelConfig: function(model, config) {
+    setModelConfig(model, config) {
       return model.set("_trickle", config);
-    },
+    }
 
-    setupLocking: function() {
+    setupLocking() {
       const models = Adapt.course.getAllDescendantModels(true);
 
       // Collect all models which many need locking
@@ -237,9 +237,9 @@ define([
 
       Adapt.log.debug(`TRICKLE: ${changedLocks.length} locks changed. ${addedLockCount} added, ${removedLockCount} removed.`);
 
-    },
+    }
 
-    fetchLockingModels: function(child) {
+    fetchLockingModels(child) {
       const allSiblings = child.getParent().getAvailableChildModels();
       const selfAndSubsequentSiblings = allSiblings.slice(allSiblings.findIndex(sibling => sibling === child));
 
@@ -254,9 +254,9 @@ define([
       });
 
       return lockingModels;
-    },
+    }
 
-    onAddChild: function(event) {
+    onAddChild(event) {
       if (event.hasRequestChild) {
         this.setupLocking();
       }
@@ -264,15 +264,15 @@ define([
         return;
       }
       event.stop();
-    },
+    }
 
-    continue: async function() {
+    async continue() {
       this.setupLocking();
       await Adapt.parentView.addChildren();
       await Adapt.parentView.whenReady();
-    },
+    }
 
-    scroll: async function(fromModel) {
+    async scroll(fromModel) {
       var trickle = Adapt.trickle.getModelConfig(fromModel);
       var scrollTo = trickle._scrollTo;
       if (scrollTo === undefined) scrollTo = "@block +1";
@@ -285,7 +285,7 @@ define([
           // Allows trickle to scroll to a sibling / cousin component
           // relative to the current trickle item
           var relativeModel = fromModel.findRelativeModel(scrollTo, {
-            filter: function(model) {
+            filter: (model) => {
               return model.get("_isAvailable");
             }
           });
@@ -317,7 +317,7 @@ define([
 
     }
 
-  });
+  }
 
   return Adapt.trickle = new Trickle();
 

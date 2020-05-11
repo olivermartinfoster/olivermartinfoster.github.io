@@ -3,17 +3,15 @@ define([
   'core/js/views/componentView'
 ], function(Adapt, ComponentView) {
 
-  var TrickleButtonView = ComponentView.extend({
+  class TrickleButtonView extends ComponentView {
 
-    allowVisible: false,
-    allowEnabled: true,
-    popupOpenCount: 0,
+    events() {
+      return {
+        "click .js-trickle-btn": "onButtonClick"
+      };
+    }
 
-    events: {
-      "click .js-trickle-btn": "onButtonClick"
-    },
-
-    calculateViewState: function() {
+    calculateViewState() {
       const trickle = this.model.getTrickleConfig();
       const isEnabled = (trickle._isEnabled && trickle._button._isEnabled);
 
@@ -66,26 +64,27 @@ define([
         _isButtonDisabled: !isButtonEnabled
       });
 
-    },
+    }
 
-    initialize: function(options) {
+    initialize(options) {
+      this.popupOpenCount = 0;
       this.model.setupStartAndFinalFlags();
       this.calculateViewState();
       this.render();
       _.defer(this.setReadyStatus.bind(this));
       this.setupEventListeners();
-    },
+    }
 
-    render: function() {
+    render() {
       var $original = this.$el;
       var data = this.model.toJSON();
       data._trickle = this.model.getTrickleConfig();
       var $newEl = $(Handlebars.templates['trickle-button'](data));
       $original.replaceWith($newEl);
       this.setElement($newEl);
-    },
+    }
 
-    setupEventListeners: function() {
+    setupEventListeners() {
       if (this.model.get('_isStepLockingCompletionRequired') && !this.model.get('_isComplete')) {
         this.listenTo(Adapt, {
           "popup:opened": this.onPopupOpened,
@@ -101,9 +100,9 @@ define([
       this.listenTo(Adapt.parentView, {
         "postRemove": this.onRemove
       });
-    },
+    }
 
-    onStepUnlocked: async function(event) {
+    async onStepUnlocked(event) {
       if (event.value === false) return;
       this.calculateViewState();
       if (!this.model.get('_isStepUnlocked')) {
@@ -116,13 +115,13 @@ define([
       });
       // Allow for popup open
       _.defer(this.beforeButtonClick.bind(this));
-    },
+    }
 
-    beforeButtonClick: function() {
+    beforeButtonClick() {
       this.updateDOM();
-    },
+    }
 
-    updateDOM: function() {
+    updateDOM() {
       this.calculateViewState();
       this.$('.js-trickle-btn-container').toggleClass('u-display-none', !this.model.get('_isButtonVisible'));
       const isButtonDisabled = this.model.get('_isButtonDisabled');
@@ -133,16 +132,16 @@ define([
       } else {
         $btn.removeAttr('disabled');
       }
-    },
+    }
 
-    onPopupOpened: function() {
+    onPopupOpened() {
       if (!this.model.get('_isStepUnlocked') || this.model.get('_isFinished')) {
         return;
       }
       this.popupOpenCount++;
-    },
+    }
 
-    onPopupClosed: function() {
+    onPopupClosed() {
       if (!this.model.get('_isStepUnlocked') || this.model.get('_isFinished')) {
         return;
       }
@@ -152,9 +151,9 @@ define([
         "popup:opened": this.onPopupOpened,
         "popup:closed": this.onPopupClosed
       });
-    },
+    }
 
-    onButtonClick: function() {
+    onButtonClick() {
       const trickle = this.model.getTrickleConfig();
       const scrollAfterClick = (trickle._button._styleAfterClick === 'scroll');
       const canScroll = (!this.model.get('_isStepLockingCompletionRequired') ||
@@ -164,29 +163,29 @@ define([
         return;
       }
       this.model.setCompletionStatus();
-    },
+    }
 
-    onButtonComplete: async function(model, value) {
+    async onButtonComplete(model, value) {
       if (!value) {
         return;
       }
       this.afterButtonClick();
       await Adapt.trickle.continue();
       Adapt.trickle.scroll(this.model);
-    },
+    }
 
-    afterButtonClick: function() {
+    afterButtonClick() {
       this.updateDOM();
-    },
+    }
 
-    onRemove: function() {
+    onRemove() {
       this.$el.off("onscreen", this.tryButtonAutoHideSync);
       this.remove();
     }
 
-  }, {
-    template: 'trickle-button'
-  });
+  }
+
+  TrickleButtonView.template = 'trickle-button';
 
   return TrickleButtonView;
 

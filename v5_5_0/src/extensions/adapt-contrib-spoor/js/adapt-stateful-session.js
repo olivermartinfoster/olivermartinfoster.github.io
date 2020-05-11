@@ -114,6 +114,7 @@ define([
         'tracking:complete': this.onTrackingComplete,
         'tracking:save': this.saveSessionState
       });
+      this.listenTo(Adapt.course, 'change:_isComplete', this.saveSessionState);
     },
 
     removeEventListeners: function () {
