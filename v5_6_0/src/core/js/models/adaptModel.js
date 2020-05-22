@@ -751,19 +751,6 @@ define([
     }
 
     /**
-     * Used before a model is rendered to determine if it should be reset to its
-     * default values.
-     */
-    checkIfResetOnRevisit() {
-      var isResetOnRevisit = this.get('_isResetOnRevisit');
-      if (!isResetOnRevisit) {
-        return;
-      }
-      // If reset is enabled set defaults
-      this.reset(isResetOnRevisit);
-    }
-
-    /**
      * Clones this model and all managed children returning a new branch.
      * Assign new unique ids to each cloned model.
      * Adds clone to Adapt.data and to their _parentId child lists.
@@ -810,6 +797,19 @@ define([
       modifier && modifier(this, clonedModel);
       clonedModel.setupModel();
       return clonedModel;
+    }
+
+    /**
+     * Used before a model is rendered to determine if it should be reset to its
+     * default values.
+     */
+    checkIfResetOnRevisit() {
+      var isResetOnRevisit = this.get('_isResetOnRevisit');
+      if (!isResetOnRevisit) {
+        return;
+      }
+      // If reset is enabled set defaults
+      this.reset(isResetOnRevisit);
     }
 
     /**

@@ -683,7 +683,7 @@ define([
         state.score,
         state.attemptInProgress ? 1:0,
       ];
-      
+
       const dataPackage = [saveState, blockData]
 
       return dataPackage;

@@ -91,7 +91,7 @@ define([
       let event;
       while (
         models = this.model.getAvailableChildModels(),
-        event = this.getAddChildEvent(models[this.nthChild])
+        event = this._getAddChildEvent(models[this.nthChild])
       ) {
         if (event.isForced) {
           event.reset();
@@ -151,7 +151,7 @@ define([
           break;
         case 'inner-append':
         default:
-        $parentContainer.append(childView.$el);
+          $parentContainer.append(childView.$el);
           break;
       }
       // Signify that a child has been added to the view to enable updates to status bars
@@ -209,7 +209,7 @@ define([
      * @param {AdaptModel} model
      * @returns {ChildEvent}
      */
-    getAddChildEvent(model) {
+    _getAddChildEvent(model) {
       const isRequestChild = !Boolean(model);
       let event = new ChildEvent(null, this, model);
       if (isRequestChild) {

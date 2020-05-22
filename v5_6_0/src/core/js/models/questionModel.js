@@ -25,8 +25,8 @@ define([
       });
     }
 
+    // Extend from the ComponentModel trackable
     trackable() {
-      // Extend from the ComponentModel trackable
       return ComponentModel.resultExtend('trackable', [
         '_isSubmitted',
         '_score',
@@ -46,14 +46,6 @@ define([
       ]);
     }
 
-    /**
-     * Returns a string of the model type group.
-     * @returns {string}
-     */
-    getTypeGroup() {
-      return 'question';
-    }
-
     setupModel(...args) {
       super.setupModel(...args);
       this.on('change:_isInteractionComplete', (model, value) => {
@@ -63,6 +55,14 @@ define([
         // Stores the current attempt state
         this.addAttemptObject();
       });
+    }
+
+    /**
+     * Returns a string of the model type group.
+     * @returns {string}
+     */
+    getTypeGroup() {
+      return 'question';
     }
 
     init() {
@@ -435,7 +435,7 @@ define([
       const states = this.get('_attemptStates') || [];
       return states.map(state => {
         return this.getAttemptObject(state);
-      });
+      })
     }
 
   }

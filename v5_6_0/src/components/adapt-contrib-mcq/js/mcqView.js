@@ -47,11 +47,11 @@ define([
     onItemFocus: function(event) {
       if (!this.model.isInteractive()) return;
 
-      this.$('.js-item-label[for='+$(event.currentTarget).attr('id')+']').addClass('is-highlighted');
+      $('.js-item-label[for='+$(event.currentTarget).attr('id')+']').addClass('is-highlighted');
     },
 
     onItemBlur: function(event) {
-      this.$('.js-item-label[for='+$(event.currentTarget).attr('id')+']').removeClass('is-highlighted');
+      $('.js-item-label[for='+$(event.currentTarget).attr('id')+']').removeClass('is-highlighted');
     },
 
     onItemSelect: function(event) {

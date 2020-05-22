@@ -54,6 +54,14 @@ define([
       });
     }
 
+    checkIfResetOnRevisit() {
+      if (this.isStepUnlocked()) return;
+      this.set({
+        _isComplete: false,
+        _isInteractionComplete: false
+      });
+    }
+
   }
 
   return TrickleButtonModel;

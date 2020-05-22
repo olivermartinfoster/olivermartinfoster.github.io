@@ -346,7 +346,7 @@ define([
         // If the element is on another page navigate and wait until pageView:ready is fired
         // Then scrollTo element
         Adapt.once('contentObjectView:ready', _.debounce(async () => {
-          this.model.set('_shouldNavigateFocus', true, { pluginName: 'adapt' });
+        this.model.set('_shouldNavigateFocus', true, { pluginName: 'adapt' });
           await Adapt.scrollTo(selector, settings);
           resolve();
         }, 1));
