@@ -44,8 +44,12 @@ self.addEventListener('fetch', (event) => {
         return cachedResponse;
       }
       console.log('Caching:', url);
-      await caches.open(cacheName).then((cache) => cache.add(url));
-      return caches.match(event.request)
+      try {
+        await caches.open(cacheName).then((cache) => cache.add(url));
+        return caches.match(event.request)
+      } catch (err) {
+        return fetch(url, {cache: "reload"});
+      }
     }),
   );
 });
