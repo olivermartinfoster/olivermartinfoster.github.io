@@ -1,6 +1,6 @@
 {
-  "short_name": "Basal Bolus Calculator",
-  "name": "Basal Bolus Calculator",
+  "short_name": "Insulin Calculator",
+  "name": "Insulin Calculator",
   "icons": [
     {
       "src": "favicon.ico",
@@ -23,5 +23,5 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "version": "0.0.11"
+  "version": "0.0.12"
 }
