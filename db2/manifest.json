@@ -1,4 +1,5 @@
 {
+  "version": "0.0.34",
   "short_name": "Insulin Calculator",
   "name": "Insulin Calculator",
   "icons": [
@@ -22,6 +23,5 @@
   "orientation": "portrait-primary",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "version": "0.0.33"
+  "background_color": "#ffffff"
 }
