@@ -18,7 +18,7 @@ body {
 }
 
 .downlight {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 ol,
@@ -61,4 +61,5 @@ ol ol {
 
 a {
     text-decoration: none;
+    color: black;
 }
