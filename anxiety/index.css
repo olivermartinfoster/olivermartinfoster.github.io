@@ -21,6 +21,11 @@ body {
     opacity: 0.9;
 }
 
+ol,
+ul {
+    padding-inline-start: 2rem;
+}
+
 ol ol {
     list-style: disc;
     padding-inline-start: 1rem;
