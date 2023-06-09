@@ -1,0 +1,55 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: initial;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.05rem;
+    line-height: 1.4rem;
+}
+
+.downlight {
+    opacity: 0.9;
+}
+
+ol ol {
+    list-style: disc;
+    padding-inline-start: 1rem;
+}
+
+.outer {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.section {
+    padding: 0.5rem 2rem 2rem;
+    background-color: lightgoldenrodyellow;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.section-short {
+    padding: 0.5rem 2rem;
+}
+
+.quotes {
+    list-style: none;
+}
+
+.quotes li,
+.quote {
+    line-height: 2rem;
+    font-style: italic;
+    font-size: 0.95rem;
+}
