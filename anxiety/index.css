@@ -53,3 +53,7 @@ ol ol {
     font-style: italic;
     font-size: 0.95rem;
 }
+
+a {
+    text-decoration: none;
+}
