@@ -30,6 +30,7 @@ ol ol {
     list-style: disc;
     padding-inline-start: 1rem;
     font-size: 0.85rem;
+    padding-top: 1em;
     padding-bottom: 1em;
 }
 
