@@ -1,0 +1,12 @@
+#output {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item .left img {
+  max-width: 100px;
+}
+
+.item {
+  margin: 2px;
+}
