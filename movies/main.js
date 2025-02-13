@@ -19,7 +19,9 @@ elSearch.addEventListener('keyup', debounce(event => {
 async function searchFor(searchTerm) {
   const filename = encodeURIComponent(searchTerm)
 
-  const response = await fetch(`https://v3.sg.media-imdb.com/suggestion/x/${filename}.json?includeVideos=0`)
+  const response = await fetch(`https://v3.sg.media-imdb.com/suggestion/x/${filename}.json?includeVideos=0`, {
+    mode: 'no-cors'
+  })
   const json = await response.json()
   const elOutput = document.getElementById('output')
   elOutput.innerHTML = ''
