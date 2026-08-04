@@ -51,5 +51,5 @@ async function findEpisodes(imdb) {
 }
 
 async function gotoMovie(imdb) {
-  window.open(`https://vidsrc.xyz/embed/movie?imdb=${imdb}`, '_blank')
+  window.open(`https://vidsrcme.ru/embed/movie?imdb=${imdb}`, '_blank')
 }
