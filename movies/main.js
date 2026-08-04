@@ -47,7 +47,7 @@ async function findEpisodes(imdb) {
   const elEpisode = document.getElementById('episode')
   const season = elSeason.value
   const episode = elEpisode.value
-  window.open(`https://vidsrc.xyz/embed/tv?imdb=${imdb}&season=${season}&episode=${episode}`, '_blank')
+  window.open(`https://vidsrcme.ru/embed/tv?imdb=${imdb}&season=${season}&episode=${episode}`, '_blank')
 }
 
 async function gotoMovie(imdb) {
